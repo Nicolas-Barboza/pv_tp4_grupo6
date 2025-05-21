@@ -1,4 +1,5 @@
 import Titulo from "./Titulo"; 
+import styles from "../styles/ProductForm.module.css"
 
 function ProductForm({ productoActual, setProductoActual, onGuardar, modo }) {
 
@@ -46,31 +47,31 @@ function ProductForm({ productoActual, setProductoActual, onGuardar, modo }) {
 
 
     return (
-        <div>
-            <Titulo texto={tituloForm} />
-            <form onSubmit={handleSubmit}>
-                <div>
+
+        <div className={styles["form-container"]}>
+            <Titulo texto={tituloForm} className={styles["header-form"]}/>
+            <form onSubmit={handleSubmit} className={styles["submit-form"]}>
+
+                <div className={styles["input-group"]}>
+
                     <label>Descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion" value={productoActual.descripcion || ""} onChange={handleChange} required></input>
-                </div>
-                <div>
+                    <input type="text" id="descripcion" name="descripcion" value={productoActual.descripcion || ""} onChange={handleChange} required placeholder="descripcion"></input>
+
                     <label>Precio Unitario:</label>
                     <input type="number" id="precioUnitario" name="precioUnitario" value={productoActual.precioUnitario || 0} onChange={handleChange} step="0.01" min="0" required></input>
-                </div>
-                <div>
+
                     <label>Descuento (%):</label>
                     <input type="number" id="descuento" name="descuento" value={productoActual.descuento || 0} onChange={handleChange} min="0" max="100"></input>
-                </div>
-                <div>
+
                     <label>Precio con Descuento:</label>
                     <input type="text" id="precioConDescuento" name="precioConDescuento" value={`$${precioConDescuentoMostrado}`} readOnly style={{ backgroundColor: "#e9e9e9" }}></input>
-                </div>
-                <div>
+
                     <label>Stock:</label>
                     <input type="number" id="stock" name="stock" value={productoActual.stock || 0} onChange={handleChange} min="0" required></input>
-                </div>
+              
                 <br />
-                <button type="submit">Guardar Producto</button>
+                <button type="submit" className={styles["submit-button"]}>Guardar Producto</button>
+                </div>
             </form>
         </div>
     );
