@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import styles from "..styles/SearchBar.module.css";
+import styles from "../styles/SearchBar.module.css";
 import SearchIcon from "./SearchIcon";
 
 function SearchBar({ productos, onFiltrar }) {

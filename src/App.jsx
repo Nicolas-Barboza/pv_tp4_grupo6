@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import NavBar from './components/NavBar';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
+import Footer from './components/Footer';
 
 let initialNextId = 0;
 const initialProductsData = [
