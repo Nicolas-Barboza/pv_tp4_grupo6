@@ -1,76 +1,56 @@
-.navBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 0 25px;
-    color: #333;
-    width: 100%;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 65px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #e0e0e0;
+.search-container {
+  display: flex; /* Clave para alinear los hijos en una fila */
+  align-items: center; /* Centra los hijos verticalmente */
+  height: 40px; /* Altura similar a los botones de NavBar */
+  background-color: #f0f0f0; /* Un fondo ligeramente diferente para la barra */
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Bordes redondeados para toda la barra */
+  padding: 0 8px 0 15px; /* Padding: Arriba Derecha Abajo Izquierda */
+  box-sizing: border-box;
+  flex-grow: 1; /* Permitir que la barra de búsqueda ocupe espacio */
+  max-width: 450px; /* Evita que sea demasiado ancha */
+  margin-left: 15px; /* Espacio respecto a los botones de acción */
 }
-
-.navSection {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.search-container label {
+  font-size: 0.9em;
+  color: #333;
+  margin-right: 8px; /* Espacio entre la etiqueta y el input */
+  white-space: nowrap; /* Evita que el texto de la etiqueta se divida en múltiples líneas */
+  flex-shrink: 0; /* Evita que la etiqueta se encoja */
 }
-
-.logoContainer {
-    height: 100%;
-    display: flex;
-    align-items: center;
+.search-input {
+  flex-grow: 1; /* El input toma el espacio restante */
+  flex-shrink: 1; /* Permite que el input se encoja si es necesario */
+  min-width: 100px; /* Un ancho mínimo para el input */
+  height: 100%;
+  border: none; /* Sin borde, ya que el contenedor principal tiene uno */
+  outline: none; /* Sin outline al hacer foco */
+  background-color: transparent; /* Fondo transparente para mostrar el del contenedor */
+  padding: 0 10px; /* Padding interno del input */
+  font-size: 0.9em;
+  color: #000000;
 }
-
-.logoContainer img { 
-    max-height: 40px;
-    width: auto;
+.static-search-icon {
+  display: flex; /* Para centrar el SVG del icono si es necesario */
+  align-items: center;
+  justify-content: center;
+  color: #555; /* Color del icono */
+  flex-shrink: 0; /* Evita que el icono se encoja */
+  padding-right: 8px; /* Un poco de espacio si es el último elemento */
 }
-
-.pageTitle {
-    font-size: 1.6em;
-    font-weight: 600;
-    margin: 0;
-    color: #2c3e50;
+.static-search-icon svg { /* Estilo directo al SVG si es necesario */
+  width: 20px;
+  height: 20px;
 }
-
-.navActions a { 
-    text-decoration: none;
-    color: #3498db;
-    background-color: transparent;
-    padding: 10px 18px;
-    border-radius: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.95em;
-    font-weight: 500;
-    border: 1px solid transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.navActions a:hover {
-    color: #2980b9;
-    background-color: #ecf0f1;
-    border-color: #bdc3c7;
-}
-
-.navActions .addProducoButton {
-    background-color: #2ecc71;
-    color: white;
-    border-color: #27ae60;
-}
-
-.navActions .addProducoButton:hover {
-    background-color: #27ae60;
-    border-color: #27ae60;
-    color: white;
+/* Fuerza que se vea el fondo transparente en autofill */
+.search-input:-webkit-autofill,
+.search-input:-webkit-autofill:focus,
+.search-input:-webkit-autofill:hover,
+.search-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  background-color: transparent !important;
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
