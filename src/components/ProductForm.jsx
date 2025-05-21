@@ -1,4 +1,4 @@
-import Titulo from "./Titulo"; 
+import Titulo from "./Titulo";
 import styles from "../styles/ProductForm.module.css"
 
 function ProductForm({ productoActual, setProductoActual, onGuardar, modo }) {
@@ -41,39 +41,40 @@ function ProductForm({ productoActual, setProductoActual, onGuardar, modo }) {
     const tituloForm = modo === "edit" ? "Editar Producto" : "Registrar Nuevo Producto";
 
     // El precio con descuento se calcula aquí, pero no se muestra en el input.
-    const precioConDescuentoMostrado = productoActual.precioConDescuento !== undefined 
-        ? productoActual.precioConDescuento.toFixed(2) 
+    const precioConDescuentoMostrado = productoActual.precioConDescuento !== undefined
+        ? productoActual.precioConDescuento.toFixed(2)
         : (productoActual.precioUnitario * (1 - (productoActual.descuento || 0) / 100)).toFixed(2);
 
 
     return (
+        <>
+            <div className={styles["center-page"]}>
+                <Titulo texto={tituloForm} />
+                <div className={styles["form-container"]}>
+                    <form onSubmit={handleSubmit} className={styles["submit-form"]}>
+                        <div className={styles["input-group"]}>
+                            <label>Descripción:</label>
+                            <input type="text" id="descripcion" name="descripcion" value={productoActual.descripcion || ""} onChange={handleChange} required placeholder="descripcion"></input>
 
-        <div className={styles["form-container"]}>
-            <Titulo texto={tituloForm} className={styles["header-form"]}/>
-            <form onSubmit={handleSubmit} className={styles["submit-form"]}>
+                            <label>Precio Unitario:</label>
+                            <input type="number" id="precioUnitario" name="precioUnitario" value={productoActual.precioUnitario || 0} onChange={handleChange} step="0.01" min="0" required></input>
 
-                <div className={styles["input-group"]}>
+                            <label>Descuento (%):</label>
+                            <input type="number" id="descuento" name="descuento" value={productoActual.descuento || 0} onChange={handleChange} min="0" max="100"></input>
 
-                    <label>Descripción:</label>
-                    <input type="text" id="descripcion" name="descripcion" value={productoActual.descripcion || ""} onChange={handleChange} required placeholder="descripcion"></input>
+                            <label>Precio con Descuento:</label>
+                            <input type="text" id="precioConDescuento" name="precioConDescuento" value={`$${precioConDescuentoMostrado}`} readOnly></input>
 
-                    <label>Precio Unitario:</label>
-                    <input type="number" id="precioUnitario" name="precioUnitario" value={productoActual.precioUnitario || 0} onChange={handleChange} step="0.01" min="0" required></input>
+                            <label>Stock:</label>
+                            <input type="number" id="stock" name="stock" value={productoActual.stock || 0} onChange={handleChange} min="0" required></input>
 
-                    <label>Descuento (%):</label>
-                    <input type="number" id="descuento" name="descuento" value={productoActual.descuento || 0} onChange={handleChange} min="0" max="100"></input>
-
-                    <label>Precio con Descuento:</label>
-                    <input type="text" id="precioConDescuento" name="precioConDescuento" value={`$${precioConDescuentoMostrado}`} readOnly style={{ backgroundColor: "#e9e9e9" }}></input>
-
-                    <label>Stock:</label>
-                    <input type="number" id="stock" name="stock" value={productoActual.stock || 0} onChange={handleChange} min="0" required></input>
-              
-                <br />
-                <button type="submit" className={styles["submit-button"]}>Guardar Producto</button>
+                            <br />
+                            <button type="submit" className={styles["submit-button"]}>Guardar Producto</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
+            </div>
+        </>
     );
 }
 
