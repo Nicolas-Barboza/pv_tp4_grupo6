@@ -35,7 +35,7 @@ function SearchBar({ productos, onFiltrar }) {
         type="text"
         value={termino}
         onChange={handleChange}
-        placeholder="Buscar producto (ID o descripción)"
+        placeholder="Buscar por (ID o descripción)"
         className={styles["search-input"]}
       />
       <div className={styles["static-search-icon"]} aria-hidden="true">
