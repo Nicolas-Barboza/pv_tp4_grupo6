@@ -1,7 +1,7 @@
 function Titulo({ texto }) {
     const style = {
         fontFamily: "Arial",
-        fontSize: "14px",
+        fontSize: "30px",
         margin: "2px",
     };
     return (
