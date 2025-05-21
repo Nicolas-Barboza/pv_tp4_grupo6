@@ -3,8 +3,8 @@
     display: block;
     text-align: center;
     padding: 50px 55px;
-    border-color: black;
-    border-style: solid;
+    border: 2.5px solid #27ae60;
+    border-radius: 16px;
     width: 340px;
     background-color: rgb(209, 202, 202);
 }
@@ -12,7 +12,10 @@
 .header-form{
 font-size: 35px;
 }
-
+#precioConDescuento {
+    background-color: #111;
+    color: #fff;
+}
 .submit-form{
     display: inline-block;
     margin-left: auto;
@@ -31,6 +34,7 @@ label{
     font-size: 15px;
     font-weight: 600;
 }
+
 
 .submit-button{
     font-size: 16px;
