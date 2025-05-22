@@ -115,13 +115,13 @@ function App() {
       case "edit": return <ProductForm productoActual={productoActual} setProductoActual={setProductoActual} onGuardar={handleGuardarProducto} modo={modo} />;
       default:
         return <ProductList productos={productosParaMostrar} onEditar={handleClickEditar} onEliminar={handleClickEliminar} />;
-    }
+      }
   };
 
   return (
     <>
       <div>
-         <NavBar
+        <NavBar
             modo={modo}
             productos={productos} 
             onProductosFiltradosApp={handleProductosFiltradosDesdeSearchBar} // Callback para SearchBar
@@ -131,6 +131,7 @@ function App() {
         <div style={{ paddingTop: "80px", padding: "20px" }}>
           {renderContent()}
         </div>
+        <Footer></Footer>
       </div>
     </>
   );
