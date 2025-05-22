@@ -49,8 +49,9 @@ Cada producto se gestiona con las siguientes propiedades:
 
 ## Integrantes del Equipo 🧑‍💻👩‍💻
 
-* **[Gonzalo Nicolas Barboza]** ➡ GitHub: `[Nicolas-Barboza]`
-* **[Nombre del Integrante 2]** ➡ GitHub: `[UsuarioGitHub2]`
+* **[Gonzalo Nicolas Barboza]** ➡ GitHub: `[Coca-m]`
+* **[Coca Mauricio Joaquin]** ➡ GitHub: `[UsuarioGitHub2]`
+* **[Facundo Santiago Cortez ]** ➡ GitHub: `[Facundo254]`
 
 ## Instalación y Ejecución Local 🚀
 
